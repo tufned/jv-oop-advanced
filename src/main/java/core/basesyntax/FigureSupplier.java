@@ -11,34 +11,37 @@ public class FigureSupplier {
 
     public Figure getRandomFigure() {
         int randomIndex = random.nextInt(AVAILABLE_FIGURES_NUMBER);
-        return switch (randomIndex) {
-            case 0 -> new Circle(
-                    colorSupplier.getRandomColor(),
-                    random.nextInt(FIGURE_PARAM_BOUND));
-            case 1 -> new Square(
-                    colorSupplier.getRandomColor(),
-                    random.nextInt(FIGURE_PARAM_BOUND));
-            case 2 ->
-                    new Rectangle(
-                            colorSupplier.getRandomColor(),
-                            random.nextInt(FIGURE_PARAM_BOUND),
-                            random.nextInt(FIGURE_PARAM_BOUND));
-            case 3 ->
-                    new IsoscelesTrapezoid(
-                            colorSupplier.getRandomColor(),
-                            random.nextInt(FIGURE_PARAM_BOUND),
-                            random.nextInt(FIGURE_PARAM_BOUND),
-                            random.nextInt(FIGURE_PARAM_BOUND));
-            case 4 ->
-                    new RightTriangle(
-                            colorSupplier.getRandomColor(),
-                            random.nextInt(FIGURE_PARAM_BOUND),
-                            random.nextInt(FIGURE_PARAM_BOUND));
-            default -> getDefaultFigure();
-        };
+        String color = colorSupplier.getRandomColor();
+        switch (randomIndex) {
+            case 0:
+                int radius = getRandomNumber();
+                return new Circle(color, radius);
+            case 1:
+                int side = getRandomNumber();
+                return new Square(color, side);
+            case 2:
+                    int length = getRandomNumber();
+                    int width = getRandomNumber();
+                    return new Rectangle(color, length, width);
+            case 3:
+                    int firstParallel = getRandomNumber();
+                    int secondParallel = getRandomNumber();
+                    int height = getRandomNumber();
+                    return new IsoscelesTrapezoid(color, firstParallel, secondParallel, height);
+            case 4:
+                    int firstLeg = getRandomNumber();
+                    int secondLeg = getRandomNumber();
+                    return new RightTriangle(color, firstLeg, secondLeg);
+            default:
+                return getDefaultFigure();
+        }
     }
 
     public Figure getDefaultFigure() {
         return new Circle(Color.WHITE.name(), DEFAULT_FIGURE_RADIUS);
+    }
+
+    private int getRandomNumber() {
+        return random.nextInt(FIGURE_PARAM_BOUND);
     }
 }

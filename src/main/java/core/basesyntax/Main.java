@@ -3,7 +3,6 @@ package core.basesyntax;
 public class Main {
     private static final int FIGURES_LENGTH = 6;
     private static final FigureSupplier figureSupplier = new FigureSupplier();
-    private static final ColorSupplier colorSupplier = new ColorSupplier();
 
     public static void main(String[] args) {
         Figure[] figures = generateFigures();
