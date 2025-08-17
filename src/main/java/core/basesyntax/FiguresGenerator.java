@@ -1,8 +1,8 @@
 package core.basesyntax;
 
 public class FiguresGenerator {
-    private final int FIGURES_LENGTH = 6;
-    private FigureSupplier figureSupplier = new FigureSupplier();
+    private static final int FIGURES_LENGTH = 6;
+    private final FigureSupplier figureSupplier = new FigureSupplier();
 
     public Figure[] generateFigures() {
         Figure[] figures = new Figure[FIGURES_LENGTH];
