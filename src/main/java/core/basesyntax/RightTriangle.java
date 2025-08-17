@@ -20,7 +20,7 @@ public class RightTriangle extends Figure {
         StringBuilder builder = new StringBuilder("Figure: ");
         System.out.println(
                 builder
-                        .append(name)
+                        .append(getName())
                         .append(", area: ")
                         .append(getArea())
                         .append(" sq. units")
@@ -31,7 +31,7 @@ public class RightTriangle extends Figure {
                         .append(secondLeg)
                         .append(" units")
                         .append(", color: ")
-                        .append(color)
+                        .append(getColor())
         );
     }
 }

@@ -18,7 +18,7 @@ public class Square extends Figure {
         StringBuilder builder = new StringBuilder("Figure: ");
         System.out.println(
                 builder
-                        .append(name)
+                        .append(getName())
                         .append(", area: ")
                         .append(getArea())
                         .append(" sq. units")
@@ -26,7 +26,7 @@ public class Square extends Figure {
                         .append(side)
                         .append(" units")
                         .append(", color: ")
-                        .append(color)
+                        .append(getColor())
         );
     }
 }
