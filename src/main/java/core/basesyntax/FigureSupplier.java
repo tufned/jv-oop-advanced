@@ -20,18 +20,18 @@ public class FigureSupplier {
                 int side = getRandomNumber();
                 return new Square(color, side);
             case 2:
-                    int length = getRandomNumber();
-                    int width = getRandomNumber();
-                    return new Rectangle(color, length, width);
+                int length = getRandomNumber();
+                int width = getRandomNumber();
+                return new Rectangle(color, length, width);
             case 3:
-                    int firstParallel = getRandomNumber();
-                    int secondParallel = getRandomNumber();
-                    int height = getRandomNumber();
-                    return new IsoscelesTrapezoid(color, firstParallel, secondParallel, height);
+                int firstParallel = getRandomNumber();
+                int secondParallel = getRandomNumber();
+                int height = getRandomNumber();
+                return new IsoscelesTrapezoid(color, firstParallel, secondParallel, height);
             case 4:
-                    int firstLeg = getRandomNumber();
-                    int secondLeg = getRandomNumber();
-                    return new RightTriangle(color, firstLeg, secondLeg);
+                int firstLeg = getRandomNumber();
+                int secondLeg = getRandomNumber();
+                return new RightTriangle(color, firstLeg, secondLeg);
             default:
                 return getDefaultFigure();
         }
